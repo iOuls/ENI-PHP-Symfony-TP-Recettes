@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {{ parent() }} / <a href="{{ path('recettes_liste') }}">Liste</a>
+{% endblock %}
+
+{% block main %}
+    <hr>
+
+    <section class="container-flex">
+        <a href="{{ path('recettes_listeAlpha') }}">
+            <button>Trie Alphabétique</button>
+        </a>
+        <a href="{{ path('recettes_listeFav') }}">
+            <button>Trie par Favoris</button>
+        </a>
+    </section>
+
+    <hr>
+
+    <section class="container-grid">
+        {% for recette in listeRecettes %}
+            <article class="card">
+
+                {{ recette.nom }}
+
+                <a href="{{ path('recettes_favoris', {'id': recette.id}) }}">
+                    {{ (recette.estfavori == true) ? '🌟' : '⭐' }}</a><br>
+
+                <a href="{{ path('recettes_detail', {'id': recette.id}) }}">
+                    <img src="{{ asset('img/'~recette.image) }}" alt="recette.image">
+                </a><br>
+                <hr>
+
+                {% if(recette.estfavori == true) %}
+                    <a href="{{ path('recettes_favoris', {'id': recette.id}) }}">Retirer des favoris</a>
+                {% else %}
+                    <a href="{{ path('recettes_favoris', {'id': recette.id}) }}">Ajouter aux favoris</a>
+                {% endif %}
+
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

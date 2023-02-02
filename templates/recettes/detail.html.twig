@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <h1>{{ recette.nom }}</h1>
+    <img src="{{ asset('img/'~recette.image) }}" alt="recette.image"><br>
+    <ul>
+        <li>{{ recette.quantite1 }} {{ recette.ingredient1 }}</li>
+        <li>{{ recette.quantite2 }} {{ recette.ingredient2 }}</li>
+        <li>{{ recette.quantite3 }} {{ recette.ingredient3 }}</li>
+    </ul>
+
+    <p>{{ recette.description }}</p>
+{% endblock %}
+
+{% block header %}
+    {{ parent() }} / <a href="{{ path('recettes_liste') }}">Liste</a> / Détail
+{% endblock %}
+

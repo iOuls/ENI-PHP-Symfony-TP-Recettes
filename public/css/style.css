@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'vanilla caramel';
+    src: url('../font/vanilla Caramel.otf')
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+
+.card img {
+    max-width: 80%;
+    border-radius: 10px;
+    max-height: 75px;
+    margin: .5em;
+}
+
+img {
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+button {
+    color: rgba(0, 75, 255, .75);
+    font-weight: bold;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 75, 255, .75);
+    padding: .55em;
+    margin: .5em 2em;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-grid {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+.card {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .5);
+    border-bottom-color: #1d4ed8;
+    border-radius: 3px;
+    text-align: center;
+    font-size: .8em;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .15);
+    transition: 1s;
+}
+
+.card:hover {
+    background-color: rgba(0, 0, 0, .25);
+    color: white;
+    transition: 1s;
+}
+
+.container-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titre-accueil {
+    text-align: center;
+    font-family: 'vanilla caramel';
+    color: blueviolet;
+    font-size: 3em;
+}
+
+.etchebest {
+    width: 100%;
+    max-width: 600px;
+    max-height: 360px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .15);
+    margin-top: 1em;
+}
+
+.fil-ariane {
+    margin-left: 1em;
+    font-family: sans-serif;
+}
